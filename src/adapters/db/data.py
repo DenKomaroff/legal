@@ -1,18 +1,23 @@
 from dataclasses import dataclass
 from datetime import date
-
+from pydantic import BaseModel
 from ...ports import ILegalEntity
+
+
+class STaskAdd(BaseModel):
+    name: str
+    description: str | None = None
 
 
 @dataclass
 class LegalEntityData:
     id: str
     status: int = 0
-    tin: str = None
-    create_date: date = None
-    liquidation_date: date = None
-    name: str = None
-    shortname: str = None
+    tin: str | None = None
+    create_date: date | None = None
+    liquidation_date: date | None = None
+    name: str | None = None
+    shortname: str | None = None
 
 
 class DataBaseAdapter(ILegalEntity):
