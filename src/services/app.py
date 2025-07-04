@@ -1,5 +1,5 @@
 from litestar import Litestar
-from .controllers import *
+from .controllers import controllers
 
 
-app = Litestar(route_handlers=[InfoController])
+app = Litestar(route_handlers=[controllers])
