@@ -1,30 +1,4 @@
-from litestar import Controller, get, delete
-from uuid import UUID
-
-class LegalEntityDto:
-    #   (BaseModel):
-    id: UUID
-    tin: str
-
-
-
-class EntityController(Controller):
-
-    path = '/{id:uuid}'
-
-    @get()
-    async def entity_info(self) -> dict[str, str]:
-
-        #   Читаем данные из бд (по ID)
-        #   Если данных нет или они могли устареть
-        #       загружаем данные из внешних источников
-        #   Если загруженные данные более свежие по дате внешнего источника
-        #       обновляем данные в объекта в БД
-        return {"a": "111"}
-
-    @delete()
-    async def entity_delete(self) -> None:
-        pass
+from litestar import Controller, get
 
 
 class FindController(Controller):

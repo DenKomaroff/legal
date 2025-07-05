@@ -1,5 +1,5 @@
 from litestar import Router
-from .index import FindController, EntityController
+from .legal import EntityController, FindController
 
 
 controllers = Router(path = '', route_handlers=[FindController, EntityController])

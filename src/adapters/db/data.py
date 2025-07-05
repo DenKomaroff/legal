@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from datetime import date
 from pydantic import BaseModel
-from ...ports import ILegalEntity
+from ports import ILegalEntity
 
 
 class STaskAdd(BaseModel):
@@ -26,10 +26,11 @@ class DataBaseAdapter(ILegalEntity):
         self.db = db
         super().__init__()
 
-    def get_info(self):
+    def get_info(self) -> LegalEntityData:
         # Просто как пример
-        self.db.execute(f'select * from legal.legal_entity where id = {self.legal.id}')
-        pass
+        # self.db.execute(f'select * from legal.legal_entity where id = {self.legal.id}')
+        result = LegalEntityData('16763be4-6022-406e-a950-fcd5018633ca')
+        return result
 
     def create(self):
         #   insert or update (merge)

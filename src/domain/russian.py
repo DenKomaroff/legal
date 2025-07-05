@@ -1,5 +1,4 @@
 from .legal import LegalEntity
-from ext.itsoft_ru import *
 
 
 class PrimaryStateRegistrationNumber:
@@ -32,7 +31,7 @@ class OrganizationalLegalForm:
     _name: str
 
 
-class RussLegalEntity(LegalEntity):
+class RusLegalEntity(LegalEntity):
 
     _olf: int                       # organizational and legal forms (ОКОПФ)
 
@@ -52,9 +51,3 @@ class RussLegalEntity(LegalEntity):
     def get_data_by_psrn(self):
         # select where self.psrn
         pass
-
-
-    def sync(self):
-        egrul(self.psrn)
-        pass
-
