@@ -16,7 +16,6 @@ class FindController(Controller):
         #   Если данных нет или они могли устареть
         #       загружаем данные из внешних источников
         data = ExtLegalEntityInfo(tin or psrn)
-        print(data._json)
         #   Если загруженные данные более свежие по дате внешнего источника
         #       обновляем данные в объекта в БД
         if tin:
