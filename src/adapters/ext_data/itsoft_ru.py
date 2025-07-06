@@ -52,7 +52,7 @@ class ItSoftRu:
     def shortname(self):
         if self._info:
             try:
-                result = self._info['СвЮЛ']['СвНаимЮЛСокр']['@attributes']['НаимСокр']
+                result = self._info['СвЮЛ']['СвНаимЮЛ']['СвНаимЮЛСокр']['@attributes']['НаимСокр']
             except Exception as e:
                 print(e)
                 result = None

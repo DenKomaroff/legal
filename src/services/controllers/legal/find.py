@@ -1,5 +1,7 @@
 from litestar import Controller, get
-
+from adapters import ExtLegalEntityInfo
+import uuid
+from .dto import *
 
 class FindController(Controller):
 
@@ -7,11 +9,14 @@ class FindController(Controller):
 
     @get()
     # async def input(self, input: LegalEntityModel) -> str:
-    async def find(self, tin: str | None = None, psrn: str | None = None) -> dict[str, str]:
+    async def find(self, tin: str | None = None, psrn: str | None = None) -> LegalEntityDTO:
+            # dict)[str, str]:
 
         #   Читаем данные из бд (если есть)
         #   Если данных нет или они могли устареть
         #       загружаем данные из внешних источников
+        data = ExtLegalEntityInfo(tin or psrn)
+        print(data._json)
         #   Если загруженные данные более свежие по дате внешнего источника
         #       обновляем данные в объекта в БД
         if tin:
@@ -20,5 +25,5 @@ class FindController(Controller):
             res = str(psrn)
         else:
             res = None
-
-        return {"find": res}
+        return LegalEntityDTO(uuid.uuid4(), data.tin, data.psrn, data.shortname, data.fullname)
+        # return {"find": None}

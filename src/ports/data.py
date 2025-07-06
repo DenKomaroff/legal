@@ -1,6 +1,6 @@
 from abc import ABC
 
-from ..domain import LegalEntity
+from domain import LegalEntity
 
 
 
