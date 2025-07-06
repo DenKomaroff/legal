@@ -2,5 +2,9 @@ from services import init
 # from .argus import argus
 
 
-if __name__ == '__main__':
+def main():
     init('services')
+
+
+if __name__ == '__main__':
+    main()

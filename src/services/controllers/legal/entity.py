@@ -18,7 +18,7 @@ class EntityController(Controller):
         #       загружаем данные из внешних источников
         #   Если загруженные данные более свежие по дате внешнего источника
         #       обновляем данные в объекта в БД
-        return LegalEntityDTO(uuid.uuid4(), '0000000000', '0000000000000', 'abcd', 'ABCD', None, None)
+        return LegalEntityDTO(uuid.uuid4(), '0000000000', '0000000000000', 'abcd', 'ABCD')
 
     @delete()
     async def entity_delete(self) -> None: ...

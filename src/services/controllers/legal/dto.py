@@ -8,12 +8,12 @@ from datetime import date
 class LegalEntityDTO:
     #   (BaseModel):
     id: UUID
-    tin: str
-    psrn: str
-    name: str
-    fullname: str
-    created: date | None
-    liquidated: date | None
+    tin: str | None = None
+    psrn: str | None = None
+    name: str | None = None
+    fullname: str | None = None
+    created: date | None = None
+    liquidated: date | None = None
 
 # @dataclass
 # class User:
