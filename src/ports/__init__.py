@@ -1,1 +1,1 @@
-from .data import ILegalEntity
+from .db import ILegalEntity
