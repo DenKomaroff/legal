@@ -1,4 +1,4 @@
-from .itsoft_ru import ItSoftRu
+from itsoft import ItSoftRu
 
 
 class ExtLegalEntityInfo:

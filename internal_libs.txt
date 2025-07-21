@@ -1,0 +1,1 @@
+itsoft-ru @ file:packages/itsoft_ru-1.0.0-py3-none-any.whl#sha256=e7cac986a705e9010629acc8a9993e7cd9e466acc70a82f3b4fd8a0d1a9e3d59
